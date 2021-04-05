@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ isEdit ? "Edit" : "Add" }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="form ion-margin">
+    <ion-select interface="action-sheet" [(ngModel)]="type"  placeholder="Select type">
+      <ion-select-option value="income">Income</ion-select-option>
+      <ion-select-option value="expense">Expense</ion-select-option>
+    </ion-select>
+
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input placeholder="Title" [(ngModel)]="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Subtitle</ion-label>
+      <ion-input placeholder="Subtitle" [(ngModel)]="subtitle"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Amount</ion-label>
+      <ion-input placeholder="Amount" type="number" [(ngModel)]="amount"></ion-input>
+    </ion-item>
+
+
+    <ion-button expand="block" (click)="addTransaction()"  class="ion-margin-top">
+      <ion-icon *ngIf="isEdit"  slot="start" name="create-outline"></ion-icon>
+      <ion-icon *ngIf="!isEdit"  slot="start" name="add-outline"></ion-icon>
+      {{ isEdit ? "Edit" : "Add" }} &nbsp; <ion-spinner *ngIf="loading" ></ion-spinner>
+    </ion-button>
+  
+  </div>
+
+</ion-content>

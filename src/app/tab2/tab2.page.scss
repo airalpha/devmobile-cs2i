@@ -1,0 +1,48 @@
+.main-div {
+  .list {
+    margin-top: 60px;
+    ion-item:part(native) {
+      padding: 0;
+    }
+    ion-item {
+      margin-top: 20px;
+      color: #676767;
+      --border-color: #ddd;
+      ion-label {
+        font-size: 1.2rem;
+        font-weight: 500;
+        p {
+          font-size: 0.8rem;
+          margin-top: 5px;
+        }
+      }
+      p.expense {
+        color: red;
+      }
+      p.income {
+        color: green;
+      }
+      p.amount {
+        font-weight: 700;
+      }
+    }
+    ion-item-sliding:last-child {
+      margin-bottom: 50px;
+    }
+    ion-item-sliding:item-sliding-active-option-end ion-item {
+      padding-right: 20px;
+    }
+    ion-item-option{
+      border-radius: 40px;
+      height: 38px;
+      width: 38px;
+      margin-top: 30px;
+      margin-trim: 4px;
+    }
+  }
+  ion-fab-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+}
