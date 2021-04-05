@@ -21,11 +21,11 @@
             <p class="amount" [ngClass]="{expense: transaction.type == 'expense', income: transaction.type == 'income'}">${{transaction.amount}}</p>
           </ion-item>
           <ion-item-options side="end">
-            <ion-item-option color="danger">
-              <ion-icon name="trash-outline" (click)="deleteTransaction(transaction.id)" ></ion-icon>
+            <ion-item-option color="danger" (click)="deleteTransaction(transaction.id)">
+              <ion-icon name="trash-outline"></ion-icon>
             </ion-item-option>
-            <ion-item-option color="success">
-              <ion-icon name="create-outline" routerLink="/add-edit-data/{{transaction.id}}"></ion-icon>
+            <ion-item-option color="success" routerLink="/add-edit-data/{{transaction.id}}">
+              <ion-icon name="create-outline"></ion-icon>
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
